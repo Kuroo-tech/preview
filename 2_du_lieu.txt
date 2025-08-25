@@ -1,0 +1,5 @@
+SV, 1, Nguyen Van A, nguyenvana@example.com, SV001, Khoa CNTT
+SV,2, Tran Thi B, tranthib@example.com, SV002, Khoa Toan
+GV,3, Le Van C, levanc@example.com, GV801, Bo mon Ly
+GV,4, Phan Thi D, phamthid@example.com, GV002, Bo mon Hoa
+SV,5, Le Van E, levanE@example.com, SV003, Khoa CNTT
