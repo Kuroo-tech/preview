@@ -1,0 +1,4 @@
+NV01,Nguyen Van A,nhanvien,chinhthuc,8000000
+GV01,Tran Thi B,giangvien,hopdong,12000000
+NV02,Le Van C,nhanvien,hopdong,7000000
+GV02,Pham Van D,giangvien,chinhthuc,15000000
