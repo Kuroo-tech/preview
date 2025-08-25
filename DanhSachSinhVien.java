@@ -8,23 +8,23 @@ public class DanhSachSinhVien {
         list = new ArrayList<>();
     }
 
-    // 1. Thêm sinh viên
+    // 1. them sinh vien
     public void themSinhVien(SinhVien sv) {
         list.add(sv);
     }
 
-    // 2. Xóa sinh viên theo mã số
+    // 2. xoa sinh vien theo ma so
     public boolean xoaSinhVienTheoMa(String maSV) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getMaSV().equalsIgnoreCase(maSV)) {
                 list.remove(i);
-                return true; // xóa thành công
+                return true; // xoa thanh cong
             }
         }
-        return false; // không tìm thấy mã sinh viên
+        return false; // khong tim thay ma sinh vien
     }
 
-    // 3. Tìm kiếm sinh viên theo tên (in ra tất cả kết quả phù hợp)
+    // 3. tim kiem sinh vien theo ten
     public ArrayList<SinhVien> timKiemTheoTen(String ten) {
         ArrayList<SinhVien> ketQua = new ArrayList<>();
         for (SinhVien sv : list) {
@@ -35,10 +35,10 @@ public class DanhSachSinhVien {
         return ketQua;
     }
 
-    // 4. Hiển thị toàn bộ danh sách
+    // 4. hien thi toan bo danh sach
     public void hienThiDanhSach() {
         if (list.isEmpty()) {
-            System.out.println("Danh sách sinh viên đang rỗng!");
+            System.out.println("Danh sach sinh vien dang rong!");
             return;
         }
         for (SinhVien sv : list) {
@@ -46,7 +46,7 @@ public class DanhSachSinhVien {
         }
     }
 
-    // 5. Lọc sinh viên: Đạt (diemTB >= 5.0)
+    // 5. Loc sinh vien dat
     public ArrayList<SinhVien> locSinhVienDat() {
         ArrayList<SinhVien> ketQua = new ArrayList<>();
         for (SinhVien sv : list) {
@@ -57,7 +57,7 @@ public class DanhSachSinhVien {
         return ketQua;
     }
 
-    // Lọc sinh viên: Không đạt (diemTB < 5.0)
+    // Loc sinh vien khong dat
     public ArrayList<SinhVien> locSinhVienKhongDat() {
         ArrayList<SinhVien> ketQua = new ArrayList<>();
         for (SinhVien sv : list) {
@@ -68,31 +68,31 @@ public class DanhSachSinhVien {
         return ketQua;
     }
 
-    // 6. Thống kê số lượng sinh viên Đạt và Không đạt
+    // 6. thong ke so luong sinh vien dat va khong dat
     public void thongKe() {
         int demDat = 0, demKhongDat = 0;
         for (SinhVien sv : list) {
             if (sv.getDiemTB() >= 5.0) demDat++;
             else demKhongDat++;
         }
-        System.out.println("Số lượng sinh viên Đạt: " + demDat);
-        System.out.println("Số lượng sinh viên Không đạt: " + demKhongDat);
+        System.out.println("So luong sinh vien dat: " + demDat);
+        System.out.println("So luong sinh vien khong dat: " + demKhongDat);
     }
 
-    // 7. Lưu danh sách vào file DSSV.txt
+    // 7. Lưu danh sách vào file dssv.txt
     public void luuVaoFile() {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("DSSV.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("dssv.txt"))) {
             for (SinhVien sv : list) {
                 bw.write(sv.toString());
                 bw.newLine();
             }
-            System.out.println("Đã lưu danh sách vào file DSSV.txt!");
+            System.out.println("Da luu file thanh cong!");
         } catch (IOException e) {
-            System.out.println("Lỗi khi lưu file: " + e.getMessage());
+            System.out.println("Loi khi luu file! Chi tiet: " + e.getMessage());
         }
     }
 
-    // 8. Đọc danh sách từ file DSSV.txt và hiển thị
+    // 8. Doc file va hien thi
     public void docTuFile() {
         list.clear();
         try (BufferedReader br = new BufferedReader(new FileReader("DSSV.txt"))) {
@@ -109,13 +109,10 @@ public class DanhSachSinhVien {
                     list.add(sv);
                 }
             }
-            System.out.println("Đọc file DSSV.txt thành công! Dưới đây là danh sách sinh viên:");
+            System.out.println("Danh sach sinh vien:");
             hienThiDanhSach();
         } catch (IOException e) {
-            System.out.println("Lỗi khi đọc file DSSV.txt: " + e.getMessage());
-        } catch (NumberFormatException e) {
-            System.out.println("Dữ liệu điểm không hợp lệ trong file DSSV.txt!");
+            System.out.println("Loi khi doc file! Chi tiet: " + e.getMessage());
         }
     }
-
 }
