@@ -5,7 +5,7 @@ public class SinhVien {
     private String queQuan;
     private double diemTB;
 
-    // Constructor đầy đủ tham số
+    // Constructor
     public SinhVien(String maSV, String hoTen, String gioiTinh, String queQuan, double diemTB) {
         this.maSV = maSV;
         this.hoTen = hoTen;
@@ -30,9 +30,10 @@ public class SinhVien {
     public double getDiemTB() { return diemTB; }
     public void setDiemTB(double diemTB) { this.diemTB = diemTB; }
 
-    // toString theo định dạng yêu cầu
+    // toString
     @Override
     public String toString() {
         return maSV + ";" + hoTen + ";" + gioiTinh + ";" + queQuan + ";" + diemTB;
     }
 }
+
