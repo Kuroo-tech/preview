@@ -1,0 +1,4 @@
+TH01,Lap trinh Java,2010,140000,100
+TH02,Lap trinh C++,2021,125000,110
+DT01,Dien tu co ban,2018,110000,150
+DT02,Vi xu ly,2022,105000,102
